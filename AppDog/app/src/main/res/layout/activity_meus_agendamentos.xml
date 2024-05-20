@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/gray"
+    tools:context=".view.MeusAgendamentos">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/txtNomeUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Meus Agendamentos"
+        android:gravity="start"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="16dp"
+        android:textSize="18sp"/>
+
+    <!-- Barra de busca -->
+        <SearchView
+        android:id="@+id/txtBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/white"
+    android:queryHint="Buscar agendamentos"
+    app:iconifiedByDefault="false"/>
+
+    <!-- Lista de agendamentos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="outsideOverlay"/>
+
+    <!-- Botões -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <!-- Botão de voltar a home -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/backHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_home"
+            android:backgroundTint="@color/blue_soft"
+            app:borderWidth="0dp"/>
+
+        <!-- View de espaçamento flexível -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Botão de adicionar agendamento -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/createAgendamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/green_create"
+            android:src="@drawable/ic_add"
+            app:borderWidth="0dp" />
+    </LinearLayout>
+
+</LinearLayout>
